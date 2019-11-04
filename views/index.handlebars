@@ -1,25 +1,35 @@
 <div class="container">
     <div class="row">
         <div class="col-12 col-lg-6">
-            <div class="row">
+            <div class="row justify-content-center">
                 <h1>Burgers To Eat</h1>
             </div>
             {{#each burger}}
             {{#unless devoured}}
-            <div class="row">
-                <span class="badge badge-secondary p-3 m-3">{{burger_name}}</span></h1>
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <span class="badge badge-secondary p-3 m-3 w-100">{{burger_name}}</span>
+                </div>
+                <div class="col-4 align-self-center">
+                    <button type="button" class="btn btn-primary eat-btn" value="{{id}}">Eat Da Burger</span>
+                </div>
             </div>
             {{/unless}}
             {{/each}}
         </div>
         <div class="col-12 col-lg-6">
-            <div class="row">
+            <div class="row justify-content-center">
                 <h1>Burgers You've Eaten</h1>
             </div>
             {{#each burger}}
             {{#if devoured}}
-            <div class="row">
-                <span class="badge badge-secondary p-3 m-3">{{burger_name}}</span></h1>
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <span class="badge badge-secondary p-3 m-3 w-100">{{burger_name}}</span>
+                </div>
+                <div class="col-4 align-self-center">
+                    <button type="button" class="btn btn-primary make-btn" value="{{id}}">Make Da Burger</span>
+                </div>
             </div>
             {{/if}}
             {{/each}}

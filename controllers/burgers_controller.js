@@ -26,9 +26,15 @@ router.post("/api/burgers/", (req, res) => {
 });
 
 router.put("/api/burgers/:id", (req, res) => {
-    burger.updateBurger(req.params.id, {burger_name: req.body.burger_name, devoured: req.body.devoured}, (data) => {
+    let updateObj = {};
+    req.body.burger_name ? updateObj["burger_name"] = req.body.burger_name : null;
+    if(req.body.devoured !== undefined){
+       req.body.devoured === "true" ? updateObj["devoured"] = true : updateObj["devoured"] = false;
+    }  
+
+    burger.updateBurger(req.params.id, updateObj, (data) => {
         console.log(data);
-        res.json(data);
+        res.status(200).end();
     });
 });
 
