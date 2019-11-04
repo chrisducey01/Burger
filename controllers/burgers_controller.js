@@ -2,6 +2,15 @@ const burger = require("../models/burger");
 const express = require("express");
 const router = express.Router();
 
+// HTML Routes
+router.get("/", (req, res) => {
+    burger.getAllBurgers(function(data){
+        res.render("index",{burger: data});
+    })
+});
+
+
+// API Routes
 router.get("/api/burgers", (req, res) => {
     burger.getAllBurgers(function (data) {
         console.log(data);

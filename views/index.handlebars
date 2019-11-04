@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <div class="row">
+                <h1>Burgers To Eat</h1>
+            </div>
+            {{#each burger}}
+            {{#unless devoured}}
+            <div class="row">
+                <span class="badge badge-secondary p-3 m-3">{{burger_name}}</span></h1>
+            </div>
+            {{/unless}}
+            {{/each}}
+        </div>
+        <div class="col-12 col-lg-6">
+            <div class="row">
+                <h1>Burgers You've Eaten</h1>
+            </div>
+            {{#each burger}}
+            {{#if devoured}}
+            <div class="row">
+                <span class="badge badge-secondary p-3 m-3">{{burger_name}}</span></h1>
+            </div>
+            {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</div>
