@@ -23,7 +23,7 @@ router.post("/api/burgers", (req, res) => {
         return req.status(400).end();   
     }
     burger.addBurger(req.body.burger_name, req.body.devoured, (err, data) =>{
-        if(err) return res.status(400).json(err);
+        if(err) return res.status(400).end();
         res.json({id: data.insertId});
     });
 });
@@ -38,6 +38,14 @@ router.put("/api/burgers/:id", (req, res) => {
     burger.updateBurger(req.params.id, updateObj, (data) => {
         console.log(data);
         res.status(200).end();
+    });
+});
+
+router.delete("/api/burgers/:id",(req,res)=>{
+    burger.removeBurger(req.params.id, (err,data)=>{
+        if(err) return res.status(400).end();
+        else if(data.affectedRows === 0) return res.status(404).end();
+        else res.status(200).end();
     });
 });
 

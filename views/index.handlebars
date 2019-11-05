@@ -1,46 +1,52 @@
 <div class="container">
-    <form>
-        <div class="form-row align-items-center justify-content-center my-3">
-            <div class="col-auto my-1 w-75">
-                <input type="text" class="form-control" name="burger_name" id="burger_name"
-                    placeholder="Enter the name of a burger to add" required>
+    <div class="jumbotron">
+        <h1 class="display-4 text-center">Burger Time!</h1>
+        <img src="assets/images/burger.png" alt="Burger" id="burger-img">
+        <hr class="my-4">
+        <p>In the text box below, enter the name of a burger you really want to eat and click Submit. You'll see it show
+            up in the "Burgers to Eat" column. From there you can click on the eat button to see it move to the "Burgers
+            You've Eaten" column. If you decide you want to eat it again, click on the make button to move it back over
+            to the "Burgers to Eat" column.</p>
+        <form class="mt-4">
+            <div class="form-row align-items-center justify-content-center my-3">
+                <div class="col-auto my-1 w-75">
+                    <input type="text" class="form-control" name="burger_name" id="burger_name"
+                        placeholder="Enter the name of a burger" required>
+                    <div class="invalid-feedback">
+                        Unable to add burger. Please try a different one.
+                    </div>
+                </div>
+                <div class="col-auto my-1">
+                    <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
+                </div>
             </div>
-            <div class="col-auto my-1">
-                <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
-            </div>
-        </div>
-    </form>
-    <div class="row">
-        <div class="col-12 col-lg-6">
+        </form>
+    </div>
+    <div class="row justify-content-around">
+        <div class="col-12 col-lg-5">
             <div class="row justify-content-center">
                 <h1>Burgers To Eat</h1>
             </div>
             {{#each burger}}
             {{#unless devoured}}
             <div class="row justify-content-center">
-                <div class="col-8">
-                    <span class="badge badge-secondary p-3 m-3 w-100">{{burger_name}}</span>
-                </div>
-                <div class="col-4 align-self-center">
-                    <button type="button" class="btn btn-primary eat-btn" value="{{id}}">Eat Da Burger</span>
-                </div>
+                <button type="button" class="btn btn-secondary p-2 m-2 burger flex-grow-1">{{burger_name}}</button>
+                <button type="button" class="btn btn-primary eat-btn p-2 m-2" value="{{id}}">Eat</button>
+                <button type="button" class="btn btn-primary del-btn p-2 m-2" value="{{id}}">Trash</button>
             </div>
             {{/unless}}
             {{/each}}
         </div>
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-5">
             <div class="row justify-content-center">
                 <h1>Burgers You've Eaten</h1>
             </div>
             {{#each burger}}
             {{#if devoured}}
             <div class="row justify-content-center">
-                <div class="col-8">
-                    <span class="badge badge-secondary p-3 m-3 w-100">{{burger_name}}</span>
-                </div>
-                <div class="col-4 align-self-center">
-                    <button type="button" class="btn btn-primary make-btn" value="{{id}}">Make Da Burger</span>
-                </div>
+                <button type="button" class="btn btn-secondary p-2 m-2 burger flex-grow-1">{{burger_name}}</span>
+                    <button type="button" class="btn btn-primary make-btn p-2 m-2" value="{{id}}">Make</button>
+                    <button type="button" class="btn btn-primary del-btn p-2 m-2" value="{{id}}">Trash</button>
             </div>
             {{/if}}
             {{/each}}

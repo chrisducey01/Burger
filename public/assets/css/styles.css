@@ -1,0 +1,12 @@
+.burger{
+    cursor: text !important;
+    /* width: 80%; */
+}
+
+#burger-img{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    margin: 40px auto;
+}

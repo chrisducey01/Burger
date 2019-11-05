@@ -18,6 +18,11 @@ const orm={
             if(err) throw err;
             cb(results);
         });
+    },
+    deleteOne: function(tableName, whereCol, whereVal, cb){
+        connection.query("DELETE FROM ?? WHERE ?? = ?",[tableName,whereCol, whereVal], (err,results)=>{
+            cb(err,results);
+        });
     }
 };
 

@@ -29,6 +29,17 @@ $(document).ready(function () {
         });
     });
 
+    $(".del-btn").click(function(event){
+        let idVal = $(this).val();
+
+        $.ajax({
+            method: "DELETE",
+            url: `/api/burgers/${idVal}`
+        }).then(function(res){
+            document.location.href = "/";
+        });
+    });
+
     $("form").on("submit", function (event) {
         event.preventDefault();
         $.ajax({
@@ -40,7 +51,8 @@ $(document).ready(function () {
                 devoured: 0
             },
             error: function(xhr, textStatus, errorThrown){
-                console.log(xhr, textStatus, errorThrown);
+                // console.log(xhr, textStatus, errorThrown);
+                $("#burger_name").addClass("is-invalid");
             }
         }).then(function (data) {
             document.location.href="/";
