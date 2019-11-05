@@ -22,7 +22,7 @@
             </div>
         </form>
     </div>
-    <div class="row justify-content-around">
+    <div class="row justify-content-around mb-4">
         <div class="col-12 col-lg-5">
             <div class="row justify-content-center">
                 <h1>Burgers To Eat</h1>
@@ -31,8 +31,8 @@
             {{#unless devoured}}
             <div class="row justify-content-center">
                 <button type="button" class="btn btn-secondary p-2 m-2 burger flex-grow-1">{{burger_name}}</button>
-                <button type="button" class="btn btn-primary eat-btn p-2 m-2" value="{{id}}">Eat</button>
-                <button type="button" class="btn btn-primary del-btn p-2 m-2" value="{{id}}">Trash</button>
+                <button type="button" class="btn btn-primary eat-btn p-2 m-2" value="{{id}}"><i class="fas fa-utensils"></i></button>
+                <button type="button" class="btn btn-primary del-btn p-2 m-2" value="{{id}}"><i class="far fa-trash-alt"></i></button>
             </div>
             {{/unless}}
             {{/each}}
@@ -45,8 +45,8 @@
             {{#if devoured}}
             <div class="row justify-content-center">
                 <button type="button" class="btn btn-secondary p-2 m-2 burger flex-grow-1">{{burger_name}}</span>
-                    <button type="button" class="btn btn-primary make-btn p-2 m-2" value="{{id}}">Make</button>
-                    <button type="button" class="btn btn-primary del-btn p-2 m-2" value="{{id}}">Trash</button>
+                    <button type="button" class="btn btn-primary make-btn p-2 m-2" value="{{id}}"><i class="fas fa-arrow-circle-left"></i></button>
+                    <button type="button" class="btn btn-primary del-btn p-2 m-2" value="{{id}}"><i class="far fa-trash-alt"></i></button>
             </div>
             {{/if}}
             {{/each}}
