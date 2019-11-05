@@ -9,8 +9,8 @@ const orm={
     },
     insertOne: function(tableName, rowObj, cb){
         connection.query("INSERT INTO ?? SET ?", [tableName,rowObj], (err,results)=>{
-            if(err) throw err;
-            cb(results);
+            // if(err) throw err;
+            cb(err, results);
         });
     },
     updateOne: function(tableName, rowObj, whereCol, whereVal, cb){

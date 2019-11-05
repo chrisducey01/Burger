@@ -18,3 +18,6 @@ CREATE TABLE burgers(
     devoured BOOLEAN DEFAULT FALSE,
     PRIMARY KEY(id)
 );
+
+-- Prevent duplicate burger names from being added to the table
+CREATE UNIQUE INDEX idx_burger_nme_uniq ON burgers (burger_name);

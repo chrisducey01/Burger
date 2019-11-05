@@ -28,4 +28,22 @@ $(document).ready(function () {
             document.location.href = "/";
         });
     });
+
+    $("form").on("submit", function (event) {
+        event.preventDefault();
+        $.ajax({
+            method: "POST",
+            url: "/api/burgers",
+            data:
+            {
+                burger_name: $("#burger_name").val().trim(),
+                devoured: 0
+            },
+            error: function(xhr, textStatus, errorThrown){
+                console.log(xhr, textStatus, errorThrown);
+            }
+        }).then(function (data) {
+            document.location.href="/";
+        });
+    });
 });

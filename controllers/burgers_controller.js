@@ -18,9 +18,12 @@ router.get("/api/burgers", (req, res) => {
     });
 });
 
-router.post("/api/burgers/", (req, res) => {
-    burger.addBurger(req.body.burger, req.body.devoured, (data) =>{
-        console.log(data);
+router.post("/api/burgers", (req, res) => {
+    if(req.body.burger_name === undefined || req.body.devoured === undefined || req.body.burger_name.length < 1 || req.body.burger_name > 50){
+        return req.status(400).end();   
+    }
+    burger.addBurger(req.body.burger_name, req.body.devoured, (err, data) =>{
+        if(err) return res.status(400).json(err);
         res.json({id: data.insertId});
     });
 });

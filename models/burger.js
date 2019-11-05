@@ -7,8 +7,8 @@ const burger={
         });
     },
     addBurger: function(burgerName, devoured=false, cb){
-        orm.insertOne("burgers",{burger_name: burgerName, devoured: devoured}, function(results){
-            cb(results);
+        orm.insertOne("burgers",{burger_name: burgerName, devoured: devoured}, function(err, results){
+            cb(err, results);
         });
     },
     updateBurger: function(burgerId, updateObj, cb){
