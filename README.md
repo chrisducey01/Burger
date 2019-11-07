@@ -1,6 +1,6 @@
 # Burger
 
-Burger is a web-based app where users can keep track of burgers they'd like to eat.  It utilizes CRUD methods to operate on a database on the backend to store the information filled out on the webpage.  Burger is a full stack app that utilizes Node/Express/MySQL on the backend to interact with the front-end site.  The front-end utilizes jQuery and BootStrap.   
+Burger is a web-based app where users can keep track of burgers they'd like to eat.  It utilizes CRUD methods to operate on a database on the backend to store the information filled out on the webpage.  Burger is a full stack app that utilizes Node/Express/Handlebars/MySQL on the backend to interact with the front-end site.  The front-end utilizes jQuery and BootStrap.   
 
 # Getting Started
 
