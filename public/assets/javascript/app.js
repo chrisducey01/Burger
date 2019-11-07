@@ -40,13 +40,6 @@ $(document).ready(function () {
         });
     });
 
-    $("#burger_name").keypress(function(event){
-        var keycode = (event.keyCode ? event.keyCode : event.which);
-        if(keycode == '13'){
-           $("#submit-btn").click();
-        }
-    });
-
     $("form").on("submit", function (event) {
         event.preventDefault();
         $.ajax({
@@ -62,6 +55,7 @@ $(document).ready(function () {
                 $("#burger_name").addClass("is-invalid");
             }
         }).then(function (data) {
+            $("#burger_name").removeClass("is-invalid");
             document.location.href="/";
         });
     });

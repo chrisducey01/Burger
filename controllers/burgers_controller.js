@@ -19,8 +19,8 @@ router.get("/api/burgers", (req, res) => {
 });
 
 router.post("/api/burgers", (req, res) => {
-    if(req.body.burger_name === undefined || req.body.devoured === undefined || req.body.burger_name.length < 1 || req.body.burger_name > 50){
-        return req.status(400).end();   
+    if(req.body.burger_name === undefined || req.body.devoured === undefined || req.body.burger_name.length < 1 || req.body.burger_name.length > 50){
+        return res.status(400).end();   
     }
     burger.addBurger(req.body.burger_name, req.body.devoured, (err, data) =>{
         if(err) return res.status(400).end();
