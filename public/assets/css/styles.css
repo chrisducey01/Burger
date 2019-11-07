@@ -1,3 +1,6 @@
+body{
+    font-family: 'PT Serif', serif; 
+}
 .burger{
     cursor: text !important;
     /* width: 80%; */
@@ -9,4 +12,13 @@
     justify-content: center;
     background-color: transparent;
     margin: 40px auto;
+}
+
+.header{
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 5rem !important;
+}
+
+.jumbotron{
+    background-color: rgb(223, 201, 201);
 }
